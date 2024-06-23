@@ -26,7 +26,10 @@ function MainPage() {
   const [currentNumber, setCurrentNumber] = useState(0);
 
   const handlePageOnChange = number => {
+    if(number != currentNumber) {
+      console.log(number)
     setCurrentNumber(number)
+    }
    // setPagePercentage(Math.max(((number)/3) * 100,5))
     //console.log(`before ${number}`);
   };
