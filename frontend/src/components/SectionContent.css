@@ -1,0 +1,27 @@
+
+.rowStyle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 70px;
+  margin-right: 40px;
+  grid-gap: 10px;
+  height: 100vh;
+  justify-content: center; /* horizontal centering */
+  align-items: center; /* vertical centering */
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns each taking 1 fraction of available space */
+    grid-gap: 10px; /* Gap between grid items */
+  }
+  
+  .item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+  }

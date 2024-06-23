@@ -1,0 +1,9 @@
+.navbar {
+  height: "1vh";
+}
+
+.card {
+  width: 240px;
+  height: 240px;
+  background: linear-gradient(to bottom right, violet, fuchsia);
+}
