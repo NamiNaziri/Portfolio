@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import {Navbar, NavbarContent, NavbarItem, Link,} from "@nextui-org/react";
+import {useState } from 'react'
 
 const navItems = [
     {
@@ -19,6 +20,10 @@ const navItems = [
 
 function NavBar({primary=0}) {
 
+    const [currentPrimary, setCurrentPrimary]=useState(0)
+    const handlePress = (id) => {
+        //setCurrentPrimary(id)
+    }
 
     return (
     <Navbar isBordered height="7vh">
@@ -28,7 +33,7 @@ function NavBar({primary=0}) {
                 {
                 const color = primary === i ? 'primary' : 'foreground'
                 // eslint-disable-next-line react/jsx-key
-                return ( <NavbarItem ><Link color={color} href={item.path}>{item.name}</Link></NavbarItem >)
+                return ( <NavbarItem ><Link onPressEnd={()=>{handlePress(i)}} color={color} href={item.path}>{item.name}</Link></NavbarItem >)
                 })
             }
       </NavbarContent>
