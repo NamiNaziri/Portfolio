@@ -37,7 +37,7 @@ const CustomScroller =({children}) => {
   return ( 
     <>
       <VerticalNavDots maxNumber={childCount} currentNumber={currentNumber} />
-      <ReactPageScroller renderAllPagesOnFirstRender={true} containerHeight="92.3vh" animationTimer={400} pageOnChange={handlePageOnChange}>
+      <ReactPageScroller renderAllPagesOnFirstRender={true}  animationTimer={400} pageOnChange={handlePageOnChange}>
           {children}
       </ReactPageScroller>
           
