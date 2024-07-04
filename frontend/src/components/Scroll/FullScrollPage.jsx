@@ -1,14 +1,17 @@
 
-import Grid from '@mui/material/Unstable_Grid2';
-import './FullScrollPage.css';
+import Fullpage, { FullPageSections, FullpageSection, FullpageNavigation } from '@ap.cx/react-fullpage'
+
 
 const FullScrollPage = ({ children }) => {
     return (
-      <div className="FullScrollPage">
-        <Grid container direction="column" className="content">
+      <Fullpage
+      desktopForceStep={true}
+      >
+        <FullpageNavigation/>
+        <FullPageSections>
           {children}
-        </Grid>
-      </div>
+        </FullPageSections>
+      </Fullpage>
     );
   };
   

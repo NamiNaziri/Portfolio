@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import SectionContent from './SectionContent';
-import ReactPageScroller from 'react-page-scroller';
-import {Progress} from "@nextui-org/react";
 import { useEffect, useState } from 'react'
-import CustomScroller from './CustomScroller';
-import "./MainPage.css";
+
+import Fullpage, { FullPageSections, FullpageSection, FullpageNavigation } from '@ap.cx/react-fullpage'
+
+
+import FullScrollPage from './Scroll/FullScrollPage';
 const VerticalNavDots = ({ maxNumber, currentNumber }) => {
   const dots = [];
 
@@ -35,15 +36,23 @@ function MainPage() {
   
 
   return ( 
-    <CustomScroller>
+    <FullScrollPage>
+      <FullpageSection>
       <SectionContent></SectionContent>
+      </FullpageSection>
+      <FullpageSection>
       <SectionContent></SectionContent>
-
+      </FullpageSection>
+      <FullpageSection>
       <SectionContent></SectionContent>
+      </FullpageSection>
+      <FullpageSection>
       <SectionContent></SectionContent>
+      </FullpageSection>
+      <FullpageSection>
       <SectionContent></SectionContent>
-      <SectionContent></SectionContent>
-    </CustomScroller>
+      </FullpageSection>
+    </FullScrollPage>
     
   )
 }

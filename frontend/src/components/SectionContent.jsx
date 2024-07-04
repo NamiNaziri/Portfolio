@@ -4,12 +4,10 @@ import { FaItchIo } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { IoGameController } from "react-icons/io5";
 import {Button} from "@nextui-org/react";
-import "./SectionContent.css"
 import Grid from '@mui/material/Unstable_Grid2';
 import ImageGalleryComponent from './ImageGallery'
 import { useMediaQuery } from 'react-responsive';
 import { useEffect, useState } from 'react'
-import NavBar from './NavBar';
 import {useNavigate} from 'react-router-dom';
 import {
   Routes, Route, useLocation 
@@ -54,6 +52,7 @@ const SectionContent = () => {
         height: window.innerHeight,
       };
       setDimensions(newDimensions);
+      newDimensions.height
       console.log(`Width changed to: ${newDimensions.width}px`);
     };
 
@@ -76,8 +75,8 @@ const SectionContent = () => {
   };
 
   return (
-
-      <Grid className="rowStyle" columnSpacing={{ xs: 2, md: 5 }} paddingBottom={{ xs: "20vh"}} rowSpacing={{xs: 0}}  style={dynamicBackgroundImage} container display="flex" height='100vh' marginBottom={0} justifyContent="center" alignItems="center">
+      
+      <Grid className="rowStyle" columnSpacing={{ xs: 2, md: 5 }} paddingTop={{ xs: "5vh"}} rowSpacing={{xs: 0}}  style={dynamicBackgroundImage} container display="flex" height='100vh' marginBottom={0} justifyContent="center" alignItems="center">
 
         <Grid container xs={10} sm={10} md={10} lg={10} xl={10} >
 
