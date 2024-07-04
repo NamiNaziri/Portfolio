@@ -10,10 +10,9 @@ function CVElement() {
         <Image
           className="customImage"
           alt="nextui logo"
-          height={40}
           radius="sm"
           src="img/aalto.png"
-          width={40}
+
         />
         <div className="flex flex-col">
           <p className="text-md">NextUI</p>

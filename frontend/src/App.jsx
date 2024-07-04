@@ -39,12 +39,16 @@ const App = () => {
   return (
     <NextUIProvider navigate={navigate}>
       <main className="dark text-foreground bg-background">
-      <NavBar primary={currentPrimary}/>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/cv" element={<CVPage/>}/>
-        {/* ... */}
-      </Routes>
+      <div className="flex flex-col items-stretch h-screen ">
+        
+          <NavBar primary={currentPrimary}   />
+        
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/cv" element={<CVPage/>}/>
+            {/* ... */}
+          </Routes>
+      </div>
 
               </main  >
     </NextUIProvider>

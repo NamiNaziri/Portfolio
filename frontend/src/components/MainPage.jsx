@@ -6,7 +6,6 @@ import {Progress} from "@nextui-org/react";
 import { useEffect, useState } from 'react'
 import CustomScroller from './CustomScroller';
 import "./MainPage.css";
-import FullScrollPage from './Scroll/FullScrollPage';
 const VerticalNavDots = ({ maxNumber, currentNumber }) => {
   const dots = [];
 

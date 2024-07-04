@@ -21,8 +21,8 @@ function NavBar({primary=0}) {
 
 
     return (
-    <Navbar isBordered height="7vh">
-      <NavbarContent justify="start">
+    <Navbar isBordered >
+      <NavbarContent >
             {
                 navItems.map((item, i)=>
                 {
