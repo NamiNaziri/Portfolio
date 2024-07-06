@@ -16,10 +16,10 @@ function CVExperiment() {
       <Grid className="object-contain justify-center text-center w-full h-full">
         <h1>Education</h1>
       </Grid>
-      <Grid  className="object-contain justify-center text-center w-full h-full" >
+      <Grid  className="object-contain justify-center   w-full h-full" >
         <CVElement></CVElement>
       </Grid>
-      <Grid  className="object-contain justify-center text-center w-full h-full" >
+      <Grid  className="object-contain justify-center  w-full h-full" >
         <CVElement></CVElement>
       </Grid>
     </Grid>

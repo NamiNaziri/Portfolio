@@ -16,7 +16,7 @@ const description2= "Designed and implemented NPC behaviors utilizing behavior t
 • Developed a crowd system using the Mas"
   return (
     <Card >
-      <CardBody className="grid grid-cols-3">
+      <CardBody className="grid grid-cols-3 md:grid-cols-4">
         {/* <img
 
           radius="sm"
@@ -26,25 +26,24 @@ const description2= "Designed and implemented NPC behaviors utilizing behavior t
           <div className="image-container ">
         <img
             
-            width={240}
             radius="sm"
             src="img/RR.jfif"
           />
           </div>
-          <div className="flex flex-col col-span-2 ml-16 md:ml-0  items-start">
-              <div className="text-large font-medium mt-2  m-0">Game AI Programmer</div>
-                <div className="font-semibold text-foreground/90  m-0">RichardRendering · Freelance</div>
-                <p className="text-small text-foreground/80  m-0"  >Apr 2023 - Present</p>
-                <p className="text-small text-foreground/80 m-0 ">Remote</p>
+          <div className="flex flex-col col-span-2 md:col-span-3 ml-2    items-start">
+              <div className="text-sm md:text-large font-bold mt-2  m-0">Game AI Programmer</div>
+                <div className="text-xs md:text-base font-semibold text-foreground/90  m-0">RichardRendering · Freelance</div>
+                <p className="text-xs text-foreground/80  m-0"  >Apr 2023 - Present</p>
+                <p className="text-xs text-foreground/80 m-0 ">Remote</p>
                 
                 {!isXS && 
-              <div><Divider></Divider>  {description2}</div>
+              <div className="text-justify"><Divider></Divider>  {description}</div>
               }
               </div>
               
       </CardBody >
       {isXS &&<CardBody className="grid grid-cols-1 md:grid-cols-2 gap-0">
-        <div>{description}  </div>
+        <div className="text-justify">{description}  </div>
         </CardBody>}
       {/* <Divider/>
       <CardBody>
