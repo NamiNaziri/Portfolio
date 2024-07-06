@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react'
 
 import Fullpage, { FullPageSections, FullpageSection, FullpageNavigation } from '@ap.cx/react-fullpage'
 
-
 import FullScrollPage from './Scroll/FullScrollPage';
 const VerticalNavDots = ({ maxNumber, currentNumber }) => {
   const dots = [];

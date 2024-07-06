@@ -13,6 +13,7 @@ import {
   Routes, Route, useLocation 
 } from 'react-router-dom'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 const SectionContent = () => {
 
 
