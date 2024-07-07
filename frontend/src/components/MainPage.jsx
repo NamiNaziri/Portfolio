@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import Fullpage, { FullPageSections, FullpageSection, FullpageNavigation } from '@ap.cx/react-fullpage'
 
 import FullScrollPage from './Scroll/FullScrollPage';
+import CVPage from './CV/CVPage';
 const VerticalNavDots = ({ maxNumber, currentNumber }) => {
   const dots = [];
 
@@ -35,6 +36,7 @@ function MainPage() {
   
 
   return ( 
+    <div>
     <FullScrollPage>
       <FullpageSection>
       <SectionContent></SectionContent>
@@ -51,8 +53,10 @@ function MainPage() {
       <FullpageSection>
       <SectionContent></SectionContent>
       </FullpageSection>
+      
     </FullScrollPage>
     
+    </div>  
   )
 }
 
