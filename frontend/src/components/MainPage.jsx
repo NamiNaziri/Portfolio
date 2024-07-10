@@ -53,7 +53,7 @@ function MainPage() {
       <FullpageSection>
       <SectionContent></SectionContent>
       </FullpageSection>
-      
+        
     </FullScrollPage>
     
     </div>  

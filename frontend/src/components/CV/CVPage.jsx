@@ -1,12 +1,21 @@
 
-import CVExperiment from './CVExperiment'
+import CVExperience from './CVExperience.jsx'
+import CVEducation from './CVEducation.jsx'
 import Grid from '@mui/material/Unstable_Grid2';
 import Summary from './Summary.jsx'
 import  {Divider} from "@nextui-org/react";
-
+import Awards from './Awards.jsx';
 import "./CVPage.css"
 import PersonalInformation from './PersonalInformation.jsx';
 import CustomDevider from './CustomDevider.jsx';
+import Skills from './Skills.jsx';
+
+
+const AwardsText=[
+  "hiii",
+  "hii2",
+  "hiii3"
+]
 
 function CVPage() {
       const SummaryText = "I am a first‑year computer science master’s student at Aalto University. I’m proficient in Unreal Engine and enjoy exploring new concepts related\
@@ -20,12 +29,23 @@ to game development, particularly where gameplay, AI, and animation intersect."
 
         <Grid className=" text-justify md:text-justify w-full"  justifyContent="center" alignItems="top">
           <PersonalInformation></PersonalInformation>
+
           <CustomDevider></CustomDevider>
-          
           <Summary SummaryText={SummaryText}></Summary>
+
           <CustomDevider></CustomDevider>
-          <CVExperiment></CVExperiment>
-          <CVExperiment></CVExperiment>
+          <Awards AwardsText={AwardsText}></Awards>
+
+          <CustomDevider></CustomDevider>
+          <Skills></Skills>
+
+          <CustomDevider></CustomDevider>
+          <CVExperience></CVExperience>
+
+          <Divider></Divider>
+          <CVEducation></CVEducation>
+
+
         </Grid>
       </Grid>
     </Grid>
