@@ -3,10 +3,11 @@
 import SectionContent from './SectionContent';
 import { useEffect, useState } from 'react'
 
-import Fullpage, { FullPageSections, FullpageSection, FullpageNavigation } from '@ap.cx/react-fullpage'
+import Fullpage, { FullPageSections, FullpageSection, FullpageNavigation } from './Scroll/es'
 
 import FullScrollPage from './Scroll/FullScrollPage';
 import CVPage from './CV/CVPage';
+import {lostRadiance, spaceInvaders} from './ProjectList.jsx'
 const VerticalNavDots = ({ maxNumber, currentNumber }) => {
   const dots = [];
 
@@ -22,6 +23,13 @@ const VerticalNavDots = ({ maxNumber, currentNumber }) => {
   return <div className="vertical-nav-dots">{dots}</div>;
 };
 
+const projects = [
+  lostRadiance,
+  spaceInvaders,
+  lostRadiance,
+  spaceInvaders,
+]
+
 function MainPage() {
 
   const [pagePercentage, setPagePercentage] = useState(5);
@@ -33,26 +41,28 @@ function MainPage() {
      console.log(`before ${number}`);
   };
 
-  
+//   useEffect(() => {
+//     const handleScroll = () => {
+//         // Your scroll handling logic here
+//         console.log("hoooooo")
+//     };
+
+//     window.addEventListener('scroll', handleScroll);
+
+//     // Clean up the event listener on component unmount
+//     return () => {
+//         window.removeEventListener('scroll', handleScroll);
+//     };
+// }, []);
 
   return ( 
     <div>
     <FullScrollPage>
-      <FullpageSection>
-      <SectionContent></SectionContent>
-      </FullpageSection>
-      <FullpageSection>
-      <SectionContent></SectionContent>
-      </FullpageSection>
-      <FullpageSection>
-      <SectionContent></SectionContent>
-      </FullpageSection>
-      <FullpageSection>
-      <SectionContent></SectionContent>
-      </FullpageSection>
-      <FullpageSection>
-      <SectionContent></SectionContent>
-      </FullpageSection>
+      {projects.map((project,index)=>(
+        <FullpageSection key={index}>
+          <SectionContent project={project}></SectionContent>
+        </FullpageSection>
+      ))}
         
     </FullScrollPage>
     

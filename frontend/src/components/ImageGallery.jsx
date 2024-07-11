@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/display-name */
 import ReactImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
@@ -36,30 +37,18 @@ const CustomRightNav = React.memo(({ disabled, onClick }) => {
   
 
 
-const ImageGalleryComponent = () => {
-  const items = [
-    {
-        original: 'img/s.png',
-        thumbnail: 'img/s.png',
-        renderItem: renderImage,
-        renderThumbInner: renderThumb,
-      },
-    {
-      original: 'img/lostRadiance.jpg',
-      thumbnail: 'img/lostRadiance.jpg',
-      renderItem: renderImage,
-      renderThumbInner: renderThumb,
-      showFullscreenButton: true,
-    },
-    {
-      original: 'https://www.youtube.com/embed/dR0P4tOlGsU',
-      thumbnail: 'img/lostRadiance.jpg',
-      embedUrl: 'https://www.youtube.com/embed/dR0P4tOlGsU',
-      renderItem: renderVideo,
-      renderThumbInner: renderThumb,
-      showFullscreenButton: false
-    },
-  ];
+const ImageGalleryComponent = ({items}) => {
+
+  const updatedItems = items.map(item => {
+    const newItem = { ...item };
+    if (/\.(png|jpg|jfif)$/i.test(newItem.original)) {
+        newItem.renderItem = renderImage;
+    } else {
+        newItem.renderItem = renderVideo;
+    }
+    return newItem;
+  });
+  
 
   const iframeStyle = {
     width: '100%', // Ensures the iframe takes the full width of its container
@@ -97,7 +86,7 @@ const ImageGalleryComponent = () => {
   }
 
   const gallerySettings = {
-    items: items,
+    items: updatedItems,
     showPlayButton: false,
     showBullets: true,
     thumbnailPosition: 'bottom', // Adjust thumbnail position as needed

@@ -9,6 +9,7 @@ import "./CVPage.css"
 import PersonalInformation from './PersonalInformation.jsx';
 import CustomDevider from './CustomDevider.jsx';
 import Skills from './Skills.jsx';
+import { useEffect } from 'react';
 
 
 const AwardsText=[
@@ -20,6 +21,11 @@ const AwardsText=[
 function CVPage() {
       const SummaryText = "I am a first‑year computer science master’s student at Aalto University. I’m proficient in Unreal Engine and enjoy exploring new concepts related\
 to game development, particularly where gameplay, AI, and animation intersect."
+
+  useEffect(() => {
+    // Scroll to the top of the page when MyComponent mounts
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array ensures this effect runs only on mount
 
   return (
 
