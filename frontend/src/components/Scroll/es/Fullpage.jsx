@@ -49,6 +49,7 @@ class Fullpage extends PureComponent {
       count: 0,
       number: 0,
       resetScroll: false,
+      instantScroll:false,
     };
     this.ticking = false;
     this.fullPageHeight = 0;
@@ -129,14 +130,24 @@ class Fullpage extends PureComponent {
     const {
       resetScroll,
       translateY,
-      prevScrollPos,
     } = this.state;
 
     console.log('handle scroll')
+
+    if(this.disableScroll) {
+      console.log('disable scroll')
+      return false;
+    }
+
     if (this.lockScroll) {
      
       // if > top and bottom < fix scroll
-      window.scrollTo(0, translateY * -1);
+      //window.scrollTo(0, translateY * -1);
+      window.scrollTo({
+        top:  translateY * -1,
+        left: 0,
+        behavior: 'instant'
+      });
       return false;
     }
 
@@ -154,7 +165,7 @@ class Fullpage extends PureComponent {
 
         const pageYOffset = window.pageYOffset || 0;
         const delta = pageYOffset -prevScrollPos
-        const factor = delta > 0 ? 0.1: 0.9
+        const factor = delta > 0 ? 0.2: 0.8
         const newPrevScrollPos = pageYOffset
         this.setState({
           pageYOffset,
@@ -237,7 +248,7 @@ class Fullpage extends PureComponent {
     return this;
   }
 
-  goto(newSlide, resetScroll = false) {
+  goto(newSlide, resetScroll = false, instantScroll=false) {
     const {
       slide,
     } = this.state;
@@ -261,6 +272,17 @@ class Fullpage extends PureComponent {
       }
 
       this.lockScroll = true;
+      //window.scrollTo(0, translateY * -1);
+      console.log(instantScroll)
+      if(instantScroll)
+      {
+        this.disableScroll =true;
+        window.scrollTo({
+          top:  translateY * -1,
+          left: 0,
+          behavior: 'instant'
+        });
+      }
       
       this.setState({
         slide: newSlide,
@@ -271,6 +293,7 @@ class Fullpage extends PureComponent {
       });
 
       setTimeout(() => {
+        this.disableScroll=false;
         this.lockScroll = false;
       }, scrollLockTiming);
 
@@ -294,7 +317,7 @@ class Fullpage extends PureComponent {
       number,
     } = this.state;
     const index = Math.max(0, number - 1);
-    this.goto(this.slides[index], true);
+    this.goto(this.slides[index], true, true);
   }
 
   next() {
@@ -305,15 +328,15 @@ class Fullpage extends PureComponent {
       number,
     } = this.state;
     const index = Math.min(length - 1, number + 1);
-    this.goto(this.slides[index], true);
+    this.goto(this.slides[index], true, true);
   }
 
   first() {
-    this.goto(this.slides[0], true);
+    this.goto(this.slides[0], true, true);
   }
 
   last() {
-    this.goto(this.slides[this.slides.length - 1], true);
+    this.goto(this.slides[this.slides.length - 1], true, true);
   }
 
   render() {
@@ -333,6 +356,7 @@ class Fullpage extends PureComponent {
       number,
       count,
       resetScroll,
+      instantScroll,
     } = this.state;
 
     return (
@@ -347,7 +371,7 @@ class Fullpage extends PureComponent {
           subscribe: this.subscribe,
           unsubscribe: this.unsubscribe,
           update: this.update,
-          goto: slide => this.goto(slide, resetScroll),
+          goto: (slide, resetScroll,instantScroll) => this.goto(slide, resetScroll,instantScroll),
           back: this.back,
           next: this.next,
           getIndex: this.getIndex,

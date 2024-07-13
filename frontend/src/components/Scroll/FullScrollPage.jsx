@@ -6,7 +6,7 @@ const FullScrollPage = ({ children }) => {
     return (
       <Fullpage
       transitionTiming={550}
-      scrollLockTiming={130}
+      scrollLockTiming={250}
       
       desktopForceStep={true}
       >

@@ -3,7 +3,7 @@
  * @class FullpageNavigation
  */
 // eslint-disable-next-line react/react-in-jsx-scope
-import React, { PureComponent } from 'react';
+import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import FullpageContext from './FullpageContext';
 
@@ -40,7 +40,7 @@ class FullpageNavigation extends PureComponent {
 
     const gotoSlide = (slide) => {
       const { goto } = this.context;
-      goto(slide);
+      goto(slide, false,true);
     };
 
     return (
