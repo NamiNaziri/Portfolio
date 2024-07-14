@@ -11,7 +11,6 @@ import CustomDevider from './CustomDevider.jsx';
 import Skills from './Skills.jsx';
 import { useEffect } from 'react';
 
-
 const AwardsText=[
   "hiii",
   "hii2",
@@ -50,7 +49,6 @@ to game development, particularly where gameplay, AI, and animation intersect."
 
           <Divider></Divider>
           <CVEducation></CVEducation>
-
 
         </Grid>
       </Grid>

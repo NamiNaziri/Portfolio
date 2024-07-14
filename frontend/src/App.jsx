@@ -8,10 +8,19 @@ import CVPage from './components/CV/CVPage';
 import {
   Routes, Route, useLocation 
 } from 'react-router-dom'
-
-
+import MarkdownRenderer from './components/MarkdownRenderer'
 import './App.css'; 
 import MainPage from './components/MainPage';
+
+const blogs=[
+  {
+    title:'Unreal Prototypes',
+    link: '/blogs/2023-05-23-Unreal-Prototypes.md',
+    path:'/Unreal-Prototypes'
+  }
+]
+
+
 const App = () => {
   const [currentPrimary, setCurrentPrimary]=useState(0)
   const navigate = useNavigate();
@@ -32,6 +41,9 @@ const App = () => {
       case '/contact':
         setCurrentPrimary(2);
         break;
+      default:
+        setCurrentPrimary(-1);
+        break;
     }
   }, [location]);
 
@@ -44,6 +56,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/cv" element={<CVPage/>}/>
+            {blogs.map((blog,index) => (<Route key={index}path={blog.path} element={<MarkdownRenderer markdownObject={blog}/>}/>))
+            }
+
             {/* ... */}
           </Routes>
 
