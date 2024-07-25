@@ -4,6 +4,14 @@ import  {Divider} from "@nextui-org/react";
 
 const skillSet =[
   {
+    Title: "Programming",
+    Set: ["C/C++", "Python", "JavaScrip", "MATLAB", "C#", "SQL"]
+  },
+  {
+    Title: "Software",
+    Set: ["Unreal Engine", "GitHub", "Perforce", "MATLAB", "Docker"]
+  },
+  {
     Title: "AI",
     Set: ["Behavior tree", "State Tree", "Mass AI"]
   },

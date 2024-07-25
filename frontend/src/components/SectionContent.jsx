@@ -83,14 +83,14 @@ const SectionContent = ({project}) => {
     <div>
       <div style={dynamicBackgroundImage}></div>
       <Grid className="rowStyle" columnSpacing={{ xs: 2, md: 5 }} paddingTop={{ xs: "5vh"}} marginTop={{ xs: "1.8vh"}} rowSpacing={{xs: 0}} container display="flex" height='100vh' marginBottom={0} justifyContent="center" alignItems="center">
-
+        
         <Grid container xs={10} sm={10} md={10} lg={10} xl={10} >
 
-          <Grid className=" justify-center text-center w-full lg:w-1/2 max-w-xl"  justifyContent="center" alignItems="top">
+          <Grid className=" justify-center text-center w-full md:w-1/2 max-w-xl"  justifyContent="center" alignItems="top">
             
             <ImageGalleryComponent items={project.galeryItems}></ImageGalleryComponent>
           </Grid>
-          <Grid container className="text-justify  w-full lg:w-1/2 text-sm xl:text-base">
+          <Grid container className="text-justify  w-full md:w-1/2 text-sm xl:text-base">
             <Grid xs={12}  >
             {!isXS && <h1>{project.title}</h1>}
             

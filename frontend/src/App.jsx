@@ -11,6 +11,7 @@ import {
 import MarkdownRenderer from './components/MarkdownRenderer'
 import './App.css'; 
 import MainPage from './components/MainPage';
+import SmallProjectsSection from './components/SmallProjectsSection';
 
 const blogs=[
   {
@@ -56,6 +57,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/cv" element={<CVPage/>}/>
+            <Route path="/contact" element={<SmallProjectsSection></SmallProjectsSection>}/>
             {blogs.map((blog,index) => (<Route key={index}path={blog.path} element={<MarkdownRenderer markdownObject={blog}/>}/>))
             }
 

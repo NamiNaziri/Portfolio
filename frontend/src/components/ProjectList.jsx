@@ -52,3 +52,19 @@ export const spaceInvaders =
     },
   ]
 }
+
+
+
+export const skinning = 
+{
+  title: "Dual Quaternion Skinning ",
+  description: "Implementation of Dual Quaternion Skinning (DQS) to address candy wrapping issue with other skinning techniques like Linear Blend Skinning.",
+  tags:["C++", "OpenGL"],
+  github: 'https://github.com/NamiNaziri/SpaceInvaders',
+  galeryItems: [
+    {
+        original: 'img/DQS.gif',
+        thumbnail: 'img/s.png',
+      },
+  ]
+}

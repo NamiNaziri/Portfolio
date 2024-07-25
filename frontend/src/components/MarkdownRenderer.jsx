@@ -18,9 +18,9 @@ const MarkdownRenderer = ({markdownObject}) => {
   }, []);
 
   return(
-  <div className="grid grid-cols-5 mt-2.5	">
+  <div className="grid grid-cols-6 mt-2.5	">
 
-    <div className="col-start-2 col-span-3">
+    <div className="col-start-2 col-span-4 ">
      {markdown?  <ReactMarkdown remarkPlugins={[[remarkGfm,]]} children={markdown } rehypePlugins={[rehypeRaw]} />: <div className="h-screen bg-black"></div>}
    
     </div>  

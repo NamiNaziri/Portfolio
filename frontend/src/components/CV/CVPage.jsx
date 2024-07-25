@@ -12,9 +12,32 @@ import Skills from './Skills.jsx';
 import { useEffect } from 'react';
 
 const AwardsText=[
-  "hiii",
-  "hii2",
-  "hiii3"
+  
+  {title:"Kumma Gallery Showcase – Lost Radiance (Games Now! Game Jam 2023)",
+    text: () =>(
+      <div>
+         Developed Lost Radiance, which was selected by industry professionals to be showcased at Kumma Gallery.<br/>
+         <strong>Judges:</strong> Essi Jukkala (<strong>Supercell</strong>), Eevi Korhonen (<strong>Housemarque</strong>), Tatu Laine (<strong>Futureplay</strong>), and Jussi Loukiainen (<strong>Platonic Partnership</strong>)<br/>
+         <strong>Feedback:</strong> Recognized for its simple yet engaging mechanics and strong visual presentation.<br/>
+         <a href="https://www.instagram.com/p/C7cN6jRtFZY/?img_index=1" target="_blank" rel="noopener noreferrer">More</a>
+      </div>
+    )
+      
+  }
+  ,
+  {title:"Unreal Engine Programming Challenge – Space Invaders",
+    text: () =>(
+      <div>
+        <div>Space Invaders game selected as one of the top 3 entries. The code structure was reviewed by Chris Rock, Lead Gameplay Programmer at Neon Koi(PlayStation).</div>
+        <a href="https://gamesjobfair.com/programming-challenges-unrealengine-unity" target="_blank" rel="noopener noreferrer">More</a>
+      </div>
+    )
+  }
+  ,
+  {title:"Finland Scholarship for Master's Studies",
+    text: () =>( <div>Awarded a merit-based scholarship covering full tuition fees and a €5000 grant for living expenses.</div>)
+  }
+  ,
 ]
 
 function CVPage() {

@@ -41,7 +41,7 @@ const ImageGalleryComponent = ({items}) => {
 
   const updatedItems = items.map(item => {
     const newItem = { ...item };
-    if (/\.(png|jpg|jfif)$/i.test(newItem.original)) {
+    if (/\.(png|jpg|jfif|gif)$/i.test(newItem.original)) {
         newItem.renderItem = renderImage;
     } else {
         newItem.renderItem = renderVideo;

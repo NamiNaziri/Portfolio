@@ -4,10 +4,11 @@ import SectionContent from './SectionContent';
 import { useEffect, useState } from 'react'
 
 import Fullpage, { FullPageSections, FullpageSection, FullpageNavigation } from './Scroll/es'
-
+import { useMediaQuery } from 'react-responsive';
 import FullScrollPage from './Scroll/FullScrollPage';
 import CVPage from './CV/CVPage';
-import {lostRadiance, spaceInvaders} from './ProjectList.jsx'
+import {lostRadiance, spaceInvaders,skinning } from './ProjectList.jsx'
+import SmallProjectsSection from './SmallProjectsSection.jsx';
 const VerticalNavDots = ({ maxNumber, currentNumber }) => {
   const dots = [];
 
@@ -28,10 +29,15 @@ const projects = [
   spaceInvaders,
   lostRadiance,
   spaceInvaders,
+  
+]
+
+const mobileProjects =[
+  skinning,
 ]
 
 function MainPage() {
-
+  const isXS = useMediaQuery({ query: '(max-width: 575px)' });
   const [pagePercentage, setPagePercentage] = useState(5);
   const [currentNumber, setCurrentNumber] = useState(0);
 
@@ -63,6 +69,17 @@ function MainPage() {
           <SectionContent project={project}></SectionContent>
         </FullpageSection>
       ))}
+
+      {isXS && mobileProjects.map((project,index)=>(
+        <FullpageSection key={index + 50}>
+          <SectionContent project={project}></SectionContent>
+        </FullpageSection>
+      ))}
+
+    {!isXS && 
+    <FullpageSection>
+        <SmallProjectsSection></SmallProjectsSection>
+    </FullpageSection>}
         
     </FullScrollPage>
     
