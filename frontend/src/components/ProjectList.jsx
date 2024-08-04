@@ -20,8 +20,20 @@ export const lostRadiance =
     },
     {
       original: 'https://www.youtube.com/embed/dR0P4tOlGsU',
-      thumbnail: 'img/lostRadiance.jpg',
+      thumbnail: 'img/lr_thumnail.jpg',
       embedUrl: 'https://www.youtube.com/embed/dR0P4tOlGsU',
+    },
+    {
+      original: 'img/LostRadiance/LR_e1.jpg',
+      thumbnail: 'img/LostRadiance/LR_e1.jpg',
+    },
+    {
+      original: 'img/LostRadiance/LR_e2.jpg',
+      thumbnail: 'img/LostRadiance/LR_e2.jpg',
+    },
+    {
+      original: 'img/LostRadiance/LR_e3.jpg',
+      thumbnail: 'img/LostRadiance/LR_e3.jpg',
     },
   ]
 }
@@ -35,20 +47,33 @@ export const spaceInvaders =
   backgroundImage: "/img/spaceInvader/background.png",
   itch: 'https://naminaziri.itch.io/space-invaders',
   github: 'https://github.com/NamiNaziri/SpaceInvaders',
-  more: 'https://naminaziri.itch.io/space-invaders',
+  more: 'https://www.youtube.com/watch?v=u3x7nDlHT6s&t=2168s',
   galeryItems: [
     {
-        original: 'img/SpaceInvaders.gif',
-        thumbnail: 'img/s.png',
+        original: 'img/spaceInvader/SpaceInvaders.gif',
+        thumbnail: 'img/spaceInvader/SI_thumbnail.png',
+      },
+      {
+        original: 'img/spaceInvader/SI_2.png',
+        thumbnail: 'img/spaceInvader/SI_2.png',
       },
     {
-      original: 'img/lostRadiance.jpg',
-      thumbnail: 'img/lostRadiance.jpg',
+      original: 'https://www.youtube.com/embed/JWBiKHRHcaw',
+      thumbnail: 'img/spaceInvader/SI_yt.jpg',
+      embedUrl: 'https://www.youtube.com/embed/JWBiKHRHcaw',
     },
     {
-      original: 'https://www.youtube.com/embed/dR0P4tOlGsU',
-      thumbnail: 'img/lostRadiance.jpg',
-      embedUrl: 'https://www.youtube.com/embed/dR0P4tOlGsU',
+      original: 'img/spaceInvader/Nami_Naziri_UE_Challenge.png',
+      thumbnail: 'img/spaceInvader/Nami_Naziri_UE_Challenge.png',
+    },
+    {
+      original: 'img/spaceInvader/si_review.png',
+      thumbnail: 'img/spaceInvader/si_review.png',
+    },
+    
+    {
+      original: 'img/spaceInvader/SI_1.png',
+      thumbnail: 'img/spaceInvader/SI_1.png',
     },
   ]
 }
