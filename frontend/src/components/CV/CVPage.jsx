@@ -10,6 +10,7 @@ import PersonalInformation from './PersonalInformation.jsx';
 import CustomDevider from './CustomDevider.jsx';
 import Skills from './Skills.jsx';
 import { useEffect } from 'react';
+import Certificates from './Certificates.jsx';
 
 const AwardsText=[
   
@@ -40,13 +41,25 @@ const AwardsText=[
   ,
 ]
 
+const CertificateList=[
+  {
+    text: "Winner of Unreal Engine Programming Challenge - Game Job Fair - Spring 2023",
+    link: "/img/spaceInvader/Nami_Naziri_UE_Challenge.png"
+  }
+]
+
 function CVPage() {
       const SummaryText = "I am a first‑year computer science master’s student at Aalto University. I’m proficient in Unreal Engine and enjoy exploring new concepts related\
 to game development, particularly where gameplay, AI, and animation intersect."
 
   useEffect(() => {
     // Scroll to the top of the page when MyComponent mounts
-    window.scrollTo(0, 0);
+    //window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant'
+    });
   }, []); // Empty dependency array ensures this effect runs only on mount
 
   return (
@@ -73,6 +86,11 @@ to game development, particularly where gameplay, AI, and animation intersect."
           <Divider></Divider>
           <CVEducation></CVEducation>
 
+          <Divider></Divider>
+          <Certificates CertificateList={CertificateList}></Certificates>
+
+          <div className="m-8"></div>
+          
         </Grid>
       </Grid>
     </Grid>

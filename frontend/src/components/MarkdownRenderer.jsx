@@ -6,7 +6,8 @@ import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
-
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
+import {atomDark as dark} from 'react-syntax-highlighter/dist/esm/styles/prism/'
 
 const MarkdownRenderer = ({markdownObject}) => {
   const [markdown, setMarkdown] = useState(null);
@@ -21,7 +22,25 @@ const MarkdownRenderer = ({markdownObject}) => {
   <div className="grid grid-cols-6 mt-2.5	">
 
     <div className="col-start-2 col-span-4 ">
-     {markdown?  <ReactMarkdown remarkPlugins={[[remarkGfm,]]} children={markdown } rehypePlugins={[rehypeRaw]} />: <div className="h-screen bg-black"></div>}
+     {markdown?  <ReactMarkdown remarkPlugins={[[remarkGfm,]]}  children={markdown } rehypePlugins={[rehypeRaw]} components={{
+      code(props) {
+        const {children, className, node, ...rest} = props
+        const match = /language-(\w+)/.exec(className || '')
+        return match ? (
+          <SyntaxHighlighter
+            {...rest}
+            PreTag="div"
+            children={String(children).replace(/\n$/, '')}
+            language={match[1]}
+            style={dark}
+          />
+        ) : (
+          <code {...rest} className={className}>
+            {children}
+          </code>
+        )
+      }
+    }} />: <div className="h-screen bg-black"></div>}
    
     </div>  
   </div>)

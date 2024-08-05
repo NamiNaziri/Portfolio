@@ -42,7 +42,7 @@ export const lostRadiance =
 export const spaceInvaders = 
 {
   title: "Space Invaders",
-  description: "This game is a re-creation of the classic Space Invaders, built using the Unreal Engine.",
+  description: "This is a space invaders clone game made using the Unreal engine as an entry for the 'Games Job Fair Spring 2023 - Unreal Engine Programming Challenge'.",
   tags:["C++", "Blueprint", "Unreal Engine"],
   backgroundImage: "/img/spaceInvader/background.png",
   itch: 'https://naminaziri.itch.io/space-invaders',
@@ -93,3 +93,41 @@ export const skinning =
       },
   ]
 }
+
+
+export const sm_skinning = 
+{
+  title: "Dual Quaternion Skinning ",
+  description: "Implementation of Dual Quaternion Skinning (DQS) to address candy wrapping issue with other skinning techniques like Linear Blend Skinning.",
+  tags:["C++", "OpenGL"],
+  link: '/Dual-Quaternion-Skinning',
+  img: 'img/DQS.gif',
+}
+
+export const sm_animation = 
+{
+  title: "Animation System",
+  description: "An application for playing and blending animations created from scratch using OpenGL and C++.",
+  tags:["C++", "OpenGL"],
+  link: 'https://github.com/NamiNaziri/Skeletal-Animation',
+  img: 'img/animation.gif',
+}
+
+export const sm_ik = 
+{
+  title: "Jacobian Inverse Kinematics",
+  description: "An implementation of inverse kinematics that utilizes the Jacobian matrix.",
+  tags:["C++", "OpenGL"],
+  link: '/inverse-kinematics',
+  img: 'img/IK.gif',
+}
+
+export const sm_simplify = 
+{
+  title: "Mesh Import and Simplification",
+  description: "A mesh importer and surface simplification using quadric error metrics",
+  tags:["C++", "OpenGL"],
+  link: 'https://github.com/NamiNaziri/MeshSimplifier',
+  img: 'img/simplifier.gif',
+}
+

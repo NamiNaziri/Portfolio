@@ -7,7 +7,7 @@ import Fullpage, { FullPageSections, FullpageSection, FullpageNavigation } from 
 import { useMediaQuery } from 'react-responsive';
 import FullScrollPage from './Scroll/FullScrollPage';
 import CVPage from './CV/CVPage';
-import {lostRadiance, spaceInvaders,skinning } from './ProjectList.jsx'
+import {lostRadiance, spaceInvaders,skinning, sm_skinning, sm_animation, sm_ik, sm_simplify } from './ProjectList.jsx'
 import SmallProjectsSection from './SmallProjectsSection.jsx';
 const VerticalNavDots = ({ maxNumber, currentNumber }) => {
   const dots = [];
@@ -27,13 +27,17 @@ const VerticalNavDots = ({ maxNumber, currentNumber }) => {
 const projects = [
   lostRadiance,
   spaceInvaders,
-  lostRadiance,
-  spaceInvaders,
   
 ]
 
 const mobileProjects =[
   skinning,
+]
+
+const smallProjects = [
+  [sm_skinning, sm_animation],
+  [sm_ik, sm_simplify]
+
 ]
 
 function MainPage() {
@@ -77,9 +81,14 @@ function MainPage() {
       ))}
 
     {!isXS && 
-    <FullpageSection>
-        <SmallProjectsSection></SmallProjectsSection>
-    </FullpageSection>}
+    
+      smallProjects.map((projects,index)=>(
+        <FullpageSection key={index + 100}>
+        <SmallProjectsSection projects={projects} index={index}></SmallProjectsSection>
+        </FullpageSection>
+      ))
+        
+    }
         
     </FullScrollPage>
     

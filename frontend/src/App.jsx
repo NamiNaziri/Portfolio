@@ -18,6 +18,16 @@ const blogs=[
     title:'Unreal Prototypes',
     link: '/blogs/2023-05-23-Unreal-Prototypes.md',
     path:'/Unreal-Prototypes'
+  },
+  {
+    title:'Dual Quaternion Skinning',
+    link: '/blogs/2023-03-22-Dual-quaternion-skinning.md',
+    path:'/Dual-Quaternion-Skinning'
+  },
+  {
+    title:'Inverse Kinematics',
+    link: '/blogs/2023-03-14-Inverse-Kinematics.md',
+    path:'/inverse-kinematics'
   }
 ]
 
@@ -49,7 +59,7 @@ const App = () => {
   }, [location]);
 
   return (
-    <NextUIProvider navigate={navigate}>
+    <NextUIProvider navigate={navigate} >
       <main className="dark text-foreground bg-background">
         
           <NavBar primary={currentPrimary}   />

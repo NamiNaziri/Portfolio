@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 
 import {Chip, Card,  CardBody,  CardHeader, Divider} from "@nextui-org/react";
+import { IoGameController } from "react-icons/io5";
+import {Button} from "@nextui-org/react";
+
 import { useMediaQuery } from 'react-responsive';
 import "./SmallProject.css"
 import CustomDevider from "./CV/CustomDevider";
@@ -22,34 +25,36 @@ const Experience =[
 
 const tags = ['c++', 'OpenGL']
 
-function SmallProject({element}) {  
-  const isXS = useMediaQuery({ query: '(max-width: 575px)' });
+function SmallProject({project}) {  
 
-  const description="• Designed and implemented NPC behaviors utilizing behavior trees, enabling dynamic interactions such as mantling using Nav Link Proxies and NPC following the player or predefined paths.\
-• Developed a crowd system using the MassEntity framework, enhancing it by integrating an accessory and animation system for crowd agents.\
-• Utilized smart objects to enhance crowd interactions, allowing crowds to identify, claim, and use objects such as benches.\
-• Analyzed and addressed performance bottlenecks within the crowd systems, resulting in significant optimization and improved frame rates."
-const description2= "Designed and implemented NPC behaviors utilizing behavior trees, enabling dynamic interactions such as mantling using Nav Link Proxies and NPC following the player or predefined paths.\
-• Developed a crowd system using the Mas"
+  const handleButtonClick = (link) => {
+    window.open(link, '_blank'); // Replace with your desired URL
+  };
+
+
   return (
-    <div className="samll-project-container">
-    <Card >
+    <div className="backdrop-blur-3xl samll-project-container">
+    <Card>
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
-        <h4 className="font-bold text-large">Dual Quaternion Skinning</h4>
+        <h4 className="font-bold text-large">{project.title}</h4>
         <div className="flex gap-2">
-        {tags.map((tag,index)=>(<Chip key={index} color="default">{tag}</Chip>))}
+        {project.tags.map((tag,index)=>(<Chip key={index} color="default">{tag}</Chip>))}
         </div>
       </CardHeader>
       <CardBody className="flex items-center">
       <div className="project-image-container">
         <img
+          
             radius="sm"
-            src="img/DQS.gif"
+            src={project.img}
           />
           </div>
       </CardBody >
       <CardBody className="items-center gap-0">
-        <div className="text-justify">Implementation of Dual Quaternion Skinning (DQS) to address candy wrapping issue with other skinning techniques like Linear Blend Skinning. </div>
+        <div className="text-justify">{project.description}</div>
+        <Button className="flex w-full mt-4 min-h-10"  variant="bordered" startContent={<IoGameController />} onPress={()=>{handleButtonClick(project.link)}}>
+                more
+                </Button>
         </CardBody>
 
     </Card>

@@ -17,7 +17,7 @@ const skillSet =[
   },
   {
     Title: "Animation",
-    Set: ["State Machines", "Blend Spances","Animation blueprint",  "IK"]
+    Set: ["State Machines", "Blend Spaces","Animation Blueprint",  "IK"]
   }
 
 ]

@@ -1,7 +1,4 @@
----
-layout: post
-tags: [Animation,Skinning, c++]
----
+
 # Dual quaternion skinning
 
 Dual Quaternion Skinning (DQS) is an advanced rigging technique that binds a mesh to skeletal joints. Unlike the popular alternative, Linear Blend Skinning (LBS), DQS avoids the undesirable "candy-wrapper effect" and effectively simulates volume preservation.
