@@ -3,7 +3,10 @@
 *::-webkit-scrollbar {
     display: none;
   }
-
-  
+  @media screen and (max-width: 768px){
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+  }
 @tailwind components;
 @tailwind utilities;

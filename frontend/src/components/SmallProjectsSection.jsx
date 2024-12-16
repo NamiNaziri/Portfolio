@@ -26,11 +26,11 @@ function SmallProjectsSection({projects, index}) {
     marginTop:"1vh",
     zIndex: -2
   };
-
+  const layout = isXS? "grid-rows-1" : "grid-cols-2"
   return (
     <Grid className="rowStyle" columnSpacing={{ xs: 2, md: 5 }} paddingTop={{ xs: "5vh"}} marginTop={{ xs: "1.8vh"}} rowSpacing={{xs: 0}} container display="flex" height='100vh' marginBottom={0} justifyContent="center" alignItems="center">
       <div style={dynamicBackgroundImage}></div>
-    <div className="grid grid-cols-2 gap-16  mx-10 md:mx-20 place-items-center">
+    <div className={`grid ${layout} gap-16  mx-10 md:mx-20 place-items-center`}>
       
     {
       projects.map((project, index) =>(

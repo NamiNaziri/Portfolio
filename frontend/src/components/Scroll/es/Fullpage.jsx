@@ -186,6 +186,7 @@ class Fullpage extends PureComponent {
     this.ticking = true;
     return true;
   }
+  
 
   handleResize() {
     if (!this.ticking) {
@@ -195,7 +196,9 @@ class Fullpage extends PureComponent {
           document.documentElement.clientHeight,
           window.innerHeight || 0,
         );
+        
         this.fullPageHeight = this.fullpageRef.current.clientHeight;
+        //console.log(this.fullPageHeight)
         this.driverRef.current.style.height = `${this.fullPageHeight}px`;
         this.ticking = false;
       });
@@ -264,16 +267,18 @@ class Fullpage extends PureComponent {
         newSlide.el.current.offsetTop * -1,
       );
 
-      const {
-        onHide,
-      } = slide.props;
-      if (onHide && typeof onHide === 'function') {
-        setTimeout(() => onHide(translateY), transitionTiming);
-      }
+      // const {
+      //   onHide,
+      // } = slide.props;
+      // if (onHide && typeof onHide === 'function') {
+      //   setTimeout(() => onHide(translateY), transitionTiming);
+      // }
 
       this.lockScroll = true;
       //window.scrollTo(0, translateY * -1);
-      console.log(instantScroll)
+      console.log(translateY * -1)
+      console.log(newSlide)
+      console.log(resetScroll)
       if(instantScroll)
       {
         this.disableScroll =true;
@@ -336,6 +341,9 @@ class Fullpage extends PureComponent {
   }
 
   last() {
+    console.log('--last--')
+    console.log(this.slides)
+    console.log(this.slides[this.slides.length - 1])
     this.goto(this.slides[this.slides.length - 1], true, true);
   }
 

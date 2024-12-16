@@ -7,23 +7,9 @@ import Fullpage, { FullPageSections, FullpageSection, FullpageNavigation } from 
 import { useMediaQuery } from 'react-responsive';
 import FullScrollPage from './Scroll/FullScrollPage';
 import CVPage from './CV/CVPage';
-import {lostRadiance, spaceInvaders,skinning, sm_skinning, sm_animation, sm_ik, sm_simplify } from './ProjectList.jsx'
+import {lostRadiance, spaceInvaders,skinning, sm_skinning, sm_animation, sm_ik, sm_simplify,sm_prototypes } from './ProjectList.jsx'
 import SmallProjectsSection from './SmallProjectsSection.jsx';
-const VerticalNavDots = ({ maxNumber, currentNumber }) => {
-  const dots = [];
-
-  for (let i = 0; i < maxNumber; i++) {
-    dots.push(
-      <div
-        key={i}
-        className={`dot ${i === currentNumber ? 'active' : ''}`}
-      ></div>
-    );
-  }
-
-  return <div className="vertical-nav-dots">{dots}</div>;
-};
-
+import LoadingPage from './LoadingPage.jsx'
 const projects = [
   lostRadiance,
   spaceInvaders,
@@ -31,43 +17,36 @@ const projects = [
 ]
 
 const mobileProjects =[
-  skinning,
+  [sm_prototypes],[ sm_animation],
+  [sm_skinning],[sm_ik],
+  [sm_simplify]
 ]
 
 const smallProjects = [
-  [sm_skinning, sm_animation],
-  [sm_ik, sm_simplify]
+  [sm_prototypes,  sm_animation],
+  [sm_skinning,sm_ik],
+  [sm_simplify]
 
 ]
 
 function MainPage() {
   const isXS = useMediaQuery({ query: '(max-width: 575px)' });
+  const [isLoading, setIsLoading] = useState(true);
   const [pagePercentage, setPagePercentage] = useState(5);
   const [currentNumber, setCurrentNumber] = useState(0);
 
-  const handlePageOnChange = number => {
-    setCurrentNumber(number)
-    setPagePercentage(Math.max(((number)/3) * 100,5))
-     console.log(`before ${number}`);
-  };
+  useEffect(() => {
 
-//   useEffect(() => {
-//     const handleScroll = () => {
-//         // Your scroll handling logic here
-//         console.log("hoooooo")
-//     };
 
-//     window.addEventListener('scroll', handleScroll);
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 3400); 
 
-//     // Clean up the event listener on component unmount
-//     return () => {
-//         window.removeEventListener('scroll', handleScroll);
-//     };
-// }, []);
-
+  }, []);
   return ( 
     <div>
-    <FullScrollPage>
+      { isLoading && <LoadingPage></LoadingPage>}
+     <FullScrollPage>
       {projects.map((project,index)=>(
         <FullpageSection key={index}>
           <SectionContent project={project}></SectionContent>
@@ -76,7 +55,7 @@ function MainPage() {
 
       {isXS && mobileProjects.map((project,index)=>(
         <FullpageSection key={index + 50}>
-          <SectionContent project={project}></SectionContent>
+          <SmallProjectsSection projects={project} index={index}></SmallProjectsSection>
         </FullpageSection>
       ))}
 
@@ -90,7 +69,8 @@ function MainPage() {
         
     }
         
-    </FullScrollPage>
+    </FullScrollPage> 
+  
     
     </div>  
   )

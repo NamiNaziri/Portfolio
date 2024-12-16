@@ -99,7 +99,7 @@ export const sm_skinning =
 {
   title: "Dual Quaternion Skinning ",
   description: "Implementation of Dual Quaternion Skinning (DQS) to address candy wrapping issue with other skinning techniques like Linear Blend Skinning.",
-  tags:["C++", "OpenGL"],
+  tags:["C++", "OpenGL", "2023"],
   link: '/Dual-Quaternion-Skinning',
   img: 'img/DQS.gif',
 }
@@ -108,7 +108,7 @@ export const sm_animation =
 {
   title: "Animation System",
   description: "An application for playing and blending animations created from scratch using OpenGL and C++.",
-  tags:["C++", "OpenGL"],
+  tags:["C++", "OpenGL", "2022"],
   link: 'https://github.com/NamiNaziri/Skeletal-Animation',
   img: 'img/animation.gif',
 }
@@ -117,7 +117,7 @@ export const sm_ik =
 {
   title: "Jacobian Inverse Kinematics",
   description: "An implementation of inverse kinematics that utilizes the Jacobian matrix.",
-  tags:["C++", "OpenGL"],
+  tags:["C++", "OpenGL", "2023"],
   link: '/inverse-kinematics',
   img: 'img/IK.gif',
 }
@@ -126,8 +126,17 @@ export const sm_simplify =
 {
   title: "Mesh Import and Simplification",
   description: "A mesh importer and surface simplification using quadric error metrics",
-  tags:["C++", "OpenGL"],
+  tags:["C++", "OpenGL", "2023"],
   link: 'https://github.com/NamiNaziri/MeshSimplifier',
   img: 'img/simplifier.gif',
+}
+
+export const sm_prototypes = 
+{
+  title: "Unreal Prototypes",
+  description: "This is a compilation of various prototypes I have developed using Unreal Engine.",
+  tags:["Unreal Engine", "C++", "Blueprint", "2021-2023"],
+  link: '/Unreal-Prototypes',
+  img: 'img/BossAI_V2.jpg',
 }
 

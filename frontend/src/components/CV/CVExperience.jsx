@@ -4,8 +4,7 @@ import "./CVExperience.css"
 
 const Experience =[
   {
-    description: "Designed and implemented NPC behaviors utilizing behavior trees, enabling dynamic interactions such as mantling using Nav Link Proxies and NPC following the player or predefined paths.\
-• Developed a crowd system using the Mas",
+    description: "I designed and implemented NPC behaviors utilizing behavior trees, enabling dynamic interactions such as mantling using Nav Link Proxies and NPC following of the player or predefined paths. I developed a crowd system using the MassEntity framework, enhancing it by integrating an accessory and animation system for crowd agents. I utilized smart objects to enhance crowd interactions, allowing crowds to identify, claim, and use objects such as benches. Additionally, I analyzed and addressed performance bottlenecks within the crowd systems, resulting in significant optimization and improved frame rates.",
     image: "img/RR.jfif",
     title1:"Game AI Programmer",
     title2:"RichardRendering · Freelance",
@@ -15,10 +14,7 @@ const Experience =[
 
   },
   {
-    description: "• Conducting research in machine learning, specializing in deep RL and deep learning for character animation.\
-• Working with both physics-based and kinematic characters.\
-• Developing solutions to avoid full-body collisions in a multiple-character environment.\
-• Utilizing Isaac Gym as the physical simulation and RL tool.",
+    description: "I conduct research in machine learning, specializing in deep reinforcement learning (RL) and deep learning for character animation. My work involves both physics-based and kinematic characters. I develop solutions to avoid full-body collisions in environments with multiple characters, utilizing Isaac Gym as the physical simulation and reinforcement learning tool.",
     image: "img/aalto.png",
     title1:"Graduate Research Assistant",
     title2:"Aalto University Department of Computer Science · Full-time",

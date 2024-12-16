@@ -49,8 +49,9 @@ const CertificateList=[
 ]
 
 function CVPage() {
-      const SummaryText = "I am a first‑year computer science master’s student at Aalto University. I’m proficient in Unreal Engine and enjoy exploring new concepts related\
-to game development, particularly where gameplay, AI, and animation intersect."
+      const SummaryText = "Hey there, my name is Nami, and I’m currently pursuing my Master's in Computer Science at Aalto University.\
+I’m proficient in Unreal Engine and enjoy exploring new concepts related to game development, particularly where gameplay, AI, and animation intersect.\
+My experience includes working with animation components such as blending, layering, and state machines, as well as AI components such as behavior trees, smart objects, state trees, environment query systems, and AI perception."
 
   useEffect(() => {
     // Scroll to the top of the page when MyComponent mounts
